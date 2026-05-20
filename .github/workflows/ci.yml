@@ -45,9 +45,12 @@ jobs:
 
       - uses: actions/configure-pages@v5
 
+      - name: Prepare site folder
+        run: mkdir site && cp index.html site/
+
       - uses: actions/upload-pages-artifact@v3
         with:
-          path: index.html
+          path: site
 
       - id: deployment
         uses: actions/deploy-pages@v4
